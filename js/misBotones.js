@@ -23,6 +23,7 @@ class BotonExtendido extends HTMLButtonElement {
         });
     }
 }
+
 class BotonFormulario extends HTMLButtonElement {
     constructor () {
         super();
@@ -38,6 +39,7 @@ class BotonFormulario extends HTMLButtonElement {
         });
     }
 }
+
 class BotonBuscar extends HTMLButtonElement {
     constructor () {
         super();
@@ -64,6 +66,24 @@ class BotonBuscar extends HTMLButtonElement {
     }
 }
 
+class BotonBorrarForm extends HTMLButtonElement{
+    constructor(){
+        //
+        super();
+        this.addEventListener('click', (e) => {
+            let formulario = document.querySelector('#contact-form');
+            formulario.querySelector('#id').value = "";
+            formulario.querySelector('#nombre').value = "";
+            formulario.querySelector('#telefono_personal').value = "";
+            formulario.querySelector('#telefono_oficina').value = "";
+            formulario.querySelector('#correo_personal').value = "";
+            formulario.querySelector('#correo_oficina').value = "";
+            formulario.querySelector('#fecha_cumple').value = "";
+        });
+    }
+}
+
 customElements.define('boton-mostrar-input', BotonExtendido, { extends: 'button' });
 customElements.define('boton-buscar-contacto', BotonBuscar, { extends: 'button' });
 customElements.define('boton-agregar-formulario', BotonFormulario, { extends: 'button' });
+customElements.define('boton-limpiar-formulario', BotonBorrarForm, { extends: 'button' });
