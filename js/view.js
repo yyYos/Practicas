@@ -50,7 +50,7 @@ MVC.View = class View {
 	}
 
 	mostrarDatos (datos,tabla) {
-		console.log(datos , tabla);
+		//console.log(datos , tabla);
 		for (let key in datos) {
 			this.mostrarDatosForm(datos[key],tabla);
 		}
@@ -64,6 +64,9 @@ MVC.View = class View {
 	}
 
 	mostrarDatosInputNombre(datos,tabla){
+ 	//console.log(datos);
+		var Table = document.querySelector("#body-tabla"); 
+            Table.innerHTML = "";
 		let cell = [];
 	
 		var row = tabla.insertRow(datos);

@@ -44,7 +44,6 @@ class BotonBuscar extends HTMLButtonElement {
         this.addEventListener('click', (e) => {
             //console.log(e);
             let divBuscar = document.querySelector('#div-buscar-contacto');
-            
             divBuscar.innerHTML = ` <div class="input-field col s6">
                                             <input type="text" name="nombre-consultar" id="nombre-consultar" placeholder="Nombre a buscar" required>
                                         </div>
