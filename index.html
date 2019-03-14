@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contactos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+      .hidden{
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contactos</h1>
+      <div class="divider"></div>
+      <div class="row">
+        <div class="row">
+            <div class="input-field col s3">
+              <button is="boton-mostrar-input" class="waves-effect waves-light btn-small" id="btnMostratInpurActualizar">Actualizar</button>
+            </div>
+            <div class="input-field col s3">
+              <button is="boton-agregar-formulario" class="waves-effect waves-light btn-small" id="btnAgregarFormulario">Agregar Contacto</button>
+            </div>
+            <div class="input-field col s3">
+              <button is="boton-buscar-contacto" class="waves-effect waves-light btn-small" id="btnBbuscarContacto">Buscar Contacto</button>
+            </div>
+        </div>
+        <div id="input-actualzar-contacto" class="row"></div>
+        <div id="div-buscar-contacto" class="row"></div>
+        <form id="contact-form" name="contact-form" class="col s12" style="display:none">
+            <h3>Información Personal</h3>
+            <div class="row">
+                <input type="text" id="id" name="id" class="hidden" required>
+                <label class="hidden" for="id">Id</label>
+              <div class="col s6">
+                  <input type="text" id="nombre" name="nombre" required>
+                  <label for="nombre">Nombre</label>
+              </div>
+              <div class="col s6">
+                  <input type="text" name="telefono_personal" id="telefono_personal" required>
+                  <label for="telefono_personal">Telefono personal</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s6">
+                  <input type="tel" name="telefono_oficina" id="telefono_oficina" required>
+                  <label for="telefono_oficina">Telefono oficina</label>
+              </div>
+              <div class="col s6">
+                  <input type="text" name="correo_personal" id="correo_personal" required>
+                  <label for="correo_personal">Correo personal</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <input type="text" name="correo_oficina" id="correo_oficina" required>
+                    <label for="correo_oficina">Correo oficina</label>
+                </div>
+                <div class="col s6">
+                    <input type="date" name="fecha_cumple" id="fecha_cumple" required>
+                    <label for="fecha_cumple">Fecha cumple</label>
+                </div>
+            </div>
+            <div class="row">
+              <button class="waves-effect waves-light btn-small"
+                type="submit"
+                onclick="event.preventDefault();MVC.controllerInst.guardarContacto(event);">
+                Guardar Contacto
+              </button>
+              <!--<button class="waves-effect waves-light btn-small"
+                type="submit"
+                onclick="event.preventDefault();MVC.controllerInst.actualizarContacto(event);">
+                Actualizar Cotacto
+              </button>-->
+            </div>
+        </form>
+        <h5>Lista de Contactos</h5>
+        <div class="divider"></div>
+        <section>
+          <table id="tabla-contactos" class="striped responsive-table">
+            <thead>
+              <tr>
+                <th class="hidden">id</th>
+                <th>nombre</th>
+                <th>telefono personal</th>
+                <th>telefono oficina</th>
+                <th>correo personal</th>
+                <th>correo oficina</th>
+                <th>fecha cumple</th>
+              </tr>
+            </thead>
+            <tbody id="body-tabla">
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <script src="./js/misBotones.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script>const MVC = {};</script>
+      <script src="./js/model.js"></script>
+      <script src="./js/view.js"></script>
+      <script src="./js/controller.js"></script>
+      <script src="./main.js"></script>
+    </div>
+  </body>
+</html>
