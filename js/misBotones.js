@@ -18,7 +18,7 @@ class BotonExtendido extends HTMLButtonElement {
             let divBuscar= document.querySelector('#div-buscar-contacto');
             divBuscar.innerHTML = "";
             let divFormulario = document.querySelector('#contact-form');
-            divFormulario.setAttribute('style','display:none');
+            divFormulario.setAttribute('style','display:block');
 
         });
     }
